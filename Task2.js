@@ -15,19 +15,34 @@ function CreateMobilePhone(model, size, price, number)
 }
 
 function MobilePhone(model, size, price, number) {
-  this.model = model;
+  let _model;
   this.size = size;
-  this.price = price;
+  let _price = 0;
   this.number = number;
   this.getNumber = function() {
     return this.number;
-  };
+  }
   this.setNumber = function(n) {
     this.number = n;
   }
+  this.getModel = () => { return _model }
+  this.setModel = (newModel) => {
+    if (newModel.length >= 4) {
+      _model = newModel
+    }
+  }
+  this.getPrice = () => { return _price }
+  this.setPrice = (newPrice) => {
+    if (newPrice >= _price) {
+      _price = newPrice
+    }
+  }
+  this.setModel(model)
+  this.setPrice(price)
 } 
 
 const m1 = CreateMobilePhone('s', 'large', '100', '12344321');
 console.log(m1)
-const m2 = new MobilePhone()
+const m2 = new MobilePhone('s', 'large', '100', '12344321')
 console.log(m2)
+m2.getPrice()
