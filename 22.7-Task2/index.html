@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Hello Angular!</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-init="name = 'Chen'">
+    <p>Hi, my name is {{ name }} </p>
+    <p>Hi  <span ng-bind="name"></span></p>
+    <p ng-if="name == 'Chen'">Hi, {{ name }}:)</p>  
+</body>
+</html>
