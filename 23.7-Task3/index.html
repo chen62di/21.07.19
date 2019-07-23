@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+<head>
+    <title>Clock!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="parentCtrl.js"></script>
+    <script src="Mobile.js"></script>
+    <script src="brotherCtrl.js"></script>
+</head>
+<body >
+
+    <div ng-controller="parentCtrl">
+
+        <p>{{devices | json}}</p>
+            
+        <p ng-repeat="m in devices"> Name: <b>{{m.model}}</b> Color: <b>{{m.color}}</b> Price: <b>{{m.price}}</b></p>
+
+        <table border="1">
+            <tr style="background:lightyellow ; padding: 10px">
+                <th>#</th>
+                <th><button ng-click="sortBy($event)" value="MODEL">MODEL</button></th>
+                <th><button ng-click="sortBy($event)" value="COLOR">COLOR</button></th>
+                <th><button ng-click="sortBy($event)" value="PRICE">PRICE</button></th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="m in devices | filter:search| orderBy:column:isReverse">
+                <td> {{$index}} </td>
+                <td>{{m.model}}</td>
+                <td>{{m.color}}</td>
+                <td>{{m.price}}</td>
+                <td><button ng-click="deletePhone($index)">X</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="text" ng-model="search.model"/></td>
+                <td><input type="text" ng-model="search.color"/></td>
+                <td><input type="text" ng-model="search.price"/></td>
+            </tr>
+        </table>
+
+        <div>
+            <p>MODEL = <input type="text" ng-model="model"/></p>
+            <p>COLOR = <input type="text" ng-model="color"/></p>
+            <p>PRICE = <input type="text" ng-model="price"/></p>
+        </div>
+        <button ng-click="addPhone()">Add Device</button>
+        <p>ID = <input type="text" ng-model="id"/></p>
+        <button ng-click="updatePhone()">Update Device</button>
+    </div>
+    <div ng-controller="brotherCtrl">
+        <p>Number of phones: {{ numberOfDevices }}</p>
+    </div>
+    <br>
+</body>
+</html>
