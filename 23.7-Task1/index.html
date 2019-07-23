@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dataApp">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> 
+    <script src="angular.js"></script>  
+    <script src="bootstrap.js"></script>  
+    <script src="calcCtrl.js"></script>
+    <script src="resultCtrl.js"></script>
+    <script src="broCtrl.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+    </head>   
+    <body>
+        <div ng-controller="calcCtrl">
+            <input type="text" ng-model="calculator.number1" placeholder="Enter a number"/>
+            <span ng-model="calculator.operator">{{ calculator.operator }}</span>
+            <span><input type="text" ng-model="calculator.number2" placeholder="Enter a number"/></span><br><br>
+            <span><div ng-controller="resultCtrl">
+                <button ng-click="doCalc()">=</button>
+                <span> {{ result }}</span>
+            </div>
+            </span><br><br>
+            <div>Choose Operator
+            <button value="+" ng-click="saveOperator($event)">+</button>
+            <button value="-" ng-click="saveOperator($event)">-</button>
+            <button value="*" ng-click="saveOperator($event)">*</button>
+            <button value="/" ng-click="saveOperator($event)">/</button>
+            </div>
+        </div>
+        <div ng-controller="broCtrl">
+            <p>Result: {{ result }}</p>
+        </div>
+    </body>
+</html>
