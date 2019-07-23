@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dataApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="index.js"></script>  
+    <script src="angular.js"></script>  
+    <script src="bootstrap.js"></script>  
+    <script src="formCtrl.js"></script> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <div ng-controller="formCtrl">
+    <div><p>Name:</p>
+        <button ng-click="resetName()">Click to reset name</button>
+        <input type="text" id="nameTxt" ng-model="person.name" placeholder="Enter your name"/>
+        <p>Name = {{person.name}}<p>
+    </div>
+    
+    <div><p>Age:</p>
+        <button ng-click="resetAge()">Click to reset age</button>
+        <input type="number" id="ageTxt" ng-model="person.age" placeholder="Choose your age"/>
+        <p>Age = {{person.age}}<p>
+    </div>
+
+    <div><p>Password:</p>
+        <button ng-click="resetPassword()">Click to reset password</button>
+        <input type="password" id="passwordTxt" ng-model="person.password" placeholder="Enter your password"/>
+        <p>Password = {{person.password}}<p>
+    </div>
+
+    <div><p>Gender:</p>
+        <div><button ng-click="resetGender()">Click to reset gender</button></div>
+        <input type="radio" name="gender" ng-model="person.gender" value="male"> Male<br>
+    <input type="radio" name="gender" ng-model="person.gender" value="female"> Female<br>
+    <input type="radio" name="gender" ng-model="person.gender" value="other"> Other
+    <br><br>
+        <p>Gender = {{person.gender}}<p>
+    </div>
+
+    <div><p>Car:</p>
+        <div><button ng-click="resetCar()">Click to reset car</button></div>
+        <select ng-model="person.car" id="car" default="Choose your car">
+            <option value="" disabled selected>Select your car</option>
+            <option value="volvo">Volvo</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Honda">Honda</option>
+            <option value="Ford">Ford</option>
+    </select>
+        <p>Car = {{person.car}}<p>
+    </div>
+    
+    <div><p>Vehicle:</p>
+        <div><button ng-click="resetVehicle()">Click to reset vehicle</button></div>
+        <input type="checkbox" name="vehicle1" ng-model="person.vehicle" value="Bike" id="vehicle1Txt" >I have a bike<br>
+        <p>Vehicle = {{person.vehicle}}<p>
+    </div>
+
+ 
+    <br>
+    <div><pr>Person = {{person | json}}</pr></div>
+    <button onclick="clicked()" class="button">Click Me!</button> 
+</div> 
+</body>
+</html>
