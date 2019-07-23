@@ -1,0 +1,30 @@
+.button {
+    color: red;
+}
+
+input {
+    background-color: lightcoral;
+}
+
+body {
+    background-color: pink;
+    font-family: Sans-serif;
+    color: white;
+}
+  
+h1 {
+    text-align: center;
+    background-image: linear-gradient(to left, lightblue, lightskyblue, turquoise, cyan, deepSkyBlue, dodgerblue, lightblue);
+}
+  
+p {
+    font-size: 20px;
+}
+
+select {
+    color: red;
+}
+
+.bike {
+    color: white;
+}
