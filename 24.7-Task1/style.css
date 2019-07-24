@@ -1,0 +1,15 @@
+.ok {
+    color : green
+}
+
+.empty {
+    color : red;
+}
+
+.halfEmpty {
+    color: orange;
+}
+
+.underAge {
+    color: blue;
+}
