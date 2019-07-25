@@ -13,8 +13,8 @@
     <div ng-controller="parentCtrl">
         <p><button ng-click="getById()">GET</button><span><input type="number" ng-model="id" placeholder="Enter Id"></span></p>
         <p>{{ data.someData }}</p>
-        <p ng-if="data.someDataError != ''">Data by Id Error: <br/> {{ data.someDataError }}</p>
-        <p ng-if="data.dataError != ''">All data Error: <br/> {{ data.dataError }}</p>
+        <p ng-if="data.someDataError !== ''">Data by Id Error: <br/> {{ data.someDataError }}</p>
+        <p ng-if="data.dataError !== ''">All data Error: <br/> {{ data.dataError }}</p>
         <table border="1" ng-hide= "data.dataError != ''">
             <tr style="background:lightyellow ; padding: 10px">
                 <th>userId</th>
