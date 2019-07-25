@@ -22,15 +22,14 @@
     <div ng-controller="inputCtrl">
         <p>a : <input type="number" ng-model="input.a"></p>
         <p>b : <input type="number" ng-model="input.b"></p>
-        <input type="radio" name="color" value="Green-Yellow" ng-model="input.color">Green-Yellow<br>
-        <input type="radio" name="color" value="Blue-Brown" ng-model="input.color">Blue-Brown<br>
-
     </div>
     <div ng-controller="sumCtrl">
-        {{ data.a }} + {{ data.b }} = <span ng-class = "getClass()">{{ data.a + data.b }}</span>
+            <input type="radio" name="color" value="Green-Yellow" ng-model="color">Green-Yellow<br>
+            <input type="radio" name="color" value="Blue-Brown" ng-model="color">Blue-Brown<br><br>
+        {{ data.a }} + {{ data.b }} = <span ng-class="getClass()">{{ data.a + data.b }}</span>
     </div>
     <div ng-controller="divideCtrl">
-        <p>{{ data.a }} / {{ data.b }} = <span ng-class = "getClass()">{{ data.a / data.b }}</span></p>
+        <p>{{ data.a }} / {{ data.b }} = <span>{{ data.a / data.b }}</span></p>
         <p ng-if="data.b === 0">{{ errors.divError }}</p>
     </div>
     <div ng-controller="aCtrl">
