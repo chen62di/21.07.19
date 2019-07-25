@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+<head>
+    <title>Final Task</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="parentCtrl.js"></script>
+</head>
+<body>
+    <div ng-controller="parentCtrl" ng-init="fillArray()">
+        <button ng-repeat="num in arr track by $index" ng-click="flipCard()">{{ num }}</button>
+    </div>
+</body>
+</html>
