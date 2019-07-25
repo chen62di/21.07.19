@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+<head>
+    <title>Clock!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+
+    <script src="errors.service.js"></script>
+    <script src="data.service.js"></script>
+    <script src="aserv.service.js"></script>
+    <script src="bserv.service.js"></script>
+
+    <script src="inputCtrl.js"></script>
+    <script src="divideCtrl.js"></script>
+    <script src="sumCtrl.js"></script>
+    <script src="aCtrl.js"></script>
+    <script src="bCtrl.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body >
+
+    <div ng-controller="inputCtrl">
+        <p>a : <input type="number" ng-model="input.a"></p>
+        <p>b : <input type="number" ng-model="input.b"></p>
+        <input type="radio" name="color" value="Green-Yellow" ng-model="input.color">Green-Yellow<br>
+        <input type="radio" name="color" value="Blue-Brown" ng-model="input.color">Blue-Brown<br>
+
+    </div>
+    <div ng-controller="sumCtrl">
+        {{ data.a }} + {{ data.b }} = <span ng-class = "getClass()">{{ data.a + data.b }}</span>
+    </div>
+    <div ng-controller="divideCtrl">
+        <p>{{ data.a }} / {{ data.b }} = <span ng-class = "getClass()">{{ data.a / data.b }}</span></p>
+        <p ng-if="data.b === 0">{{ errors.divError }}</p>
+    </div>
+    <div ng-controller="aCtrl">
+        <p ng-if="data.a < 0">{{ errors.aError }}</p>
+        <p>List A: </p>
+        <p ng-repeat="n in alist">{{ n }}</p>
+    </div>
+    <div ng-controller="bCtrl">
+        <p ng-if="data.a < 0">{{ errors.aError }}</p>
+        <p>List B: </p>
+        <p ng-repeat="n in blist">{{ n }}</p>
+    </div>
+</body>
+</html>
