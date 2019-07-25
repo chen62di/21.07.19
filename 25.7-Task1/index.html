@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+<head>
+    <title>Clock!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="parentCtrl.js"></script>
+    <script src="data.service.js"></script>
+    <script src="url.Service.js"></script>
+    <script src="http.service.js"></script>
+</head>
+<body >
+    <div ng-controller="parentCtrl">
+        <p><button ng-click="getById()">GET</button><span><input type="number" ng-model="id" placeholder="Enter Id"></span></p>
+        <p>{{ data.someData }}</p>
+        <p ng-if="data.someDataError != ''">Data by Id Error: <br/> {{ data.someDataError }}</p>
+        <p ng-if="data.dataError != ''">All data Error: <br/> {{ data.dataError }}</p>
+        <table border="1" ng-hide= "data.dataError != ''">
+            <tr style="background:lightyellow ; padding: 10px">
+                <th>userId</th>
+                <th>id</th>
+                <th>title</th>
+                <th>body</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="todo in data.todos">
+                <td> {{ todo.userId }} </td>
+                <td>{{ todo.id }}</td>
+                <td>{{ todo.title }}</td>
+                <td>{{ todo.body }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
